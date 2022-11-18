@@ -15,12 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from SAS import views
+from SAS.views import account
 
 urlpatterns = [
-    path('index/', views.index),
-
-    path('user/list/', views.user_list),
+    # path('index/', account.index),
+    #
+    path('user/list/', account.user_list),
     # user login
-    path('login/', views.login),
+    path('login/', account.login),
+    path('logout/', account.logout),
 ]

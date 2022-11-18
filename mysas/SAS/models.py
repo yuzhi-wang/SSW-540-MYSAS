@@ -4,9 +4,9 @@ from django.db import models
 
 
 class UserInfo(models.Model):
-    name = models.CharField(max_length=32)
+    username = models.CharField(max_length=32)
     password = models.CharField(max_length=64)
-    age = models.IntegerField()
+    accounttype = models.CharField(max_length=16)
 
 
 class Department(models.Model):
@@ -14,3 +14,4 @@ class Department(models.Model):
 
 
 # use class.object.create to insert new sql values
+# UserInfo.objects.create(username="yuzhi", password="123456", accounttype="teacher")
