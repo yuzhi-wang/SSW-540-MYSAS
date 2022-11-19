@@ -2,7 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django import forms
 from io import BytesIO
 
-from SAS import models
+from SAS.models import UserInfo
 from SAS.utils.bootstrap import BootStrapForm
 from SAS.utils.encrypt import md5
 
@@ -32,32 +32,33 @@ def login(request):
 
     form = LoginForm(data=request.POST)
     if form.is_valid():
-        print(form.cleaned_data)
+        # print(form.cleaned_data)
         # 验证成功，获取到的用户名和密码
         # {'username': 'wupeiqi', 'password': '123',"code":123}
         # {'username': 'wupeiqi', 'password': '5e5c3bad7eb35cba3638e145c830c35f',"code":xxx}
 
         # 去数据库校验用户名和密码是否正确，获取用户对象、None
         # admin_object = models.Admin.objects.filter(username=xxx, password=xxx).first()
-        admin_object = models.UserInfo.objects.filter(**form.cleaned_data).first()
+        admin_object = UserInfo.objects.filter(**form.cleaned_data).first()
+
+        # print(accounttype)
         if not admin_object:
-            form.add_error("password", "用户名或密码错误")
+            form.add_error("password", "wrong user name or password")
             # form.add_error("username", "用户名或密码错误")
             return render(request, 'login.html', {'form': form})
+
+        # print(admin_object.accounttype)
+        if admin_object.accounttype == "student":
+            return redirect("/student/")
 
         # # 用户名和密码正确
         # # 网站生成随机字符串; 写到用户浏览器的cookie中；在写入到session中；
         # request.session["info"] = {'id': admin_object.id, 'name': admin_object.username}
         # # session可以保存7天
         # request.session.set_expiry(60 * 60 * 24 * 7)
-
-        return redirect("/user/list/")
+        return redirect("/teacher/")
 
     return render(request, 'login.html', {'form': form})
-
-
-def user_list(request):
-    return render(request, "user_list.html")
 
 
 def logout(request):

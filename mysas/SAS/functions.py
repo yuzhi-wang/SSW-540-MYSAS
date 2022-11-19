@@ -8,7 +8,7 @@ def index(request):
 
 
 def user_list(request):
-    return render(request, "user_list.html")
+    return render(request, "student.html")
 
 
 def login(request):
@@ -19,7 +19,7 @@ def login(request):
         username = request.POST.get("user")
         userpwd = request.POST.get("pwd")
         if username == "root" and userpwd == "123":
-            return render(request, "user_list.html")
+            return render(request, "student.html")
         else:
             # return HttpResponse("Fail")
             return render(request, "login.html", {"error_msg": "wrong password"})
