@@ -3,12 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="155ba7cc-69d6-4e21-a61a-f86089e0aecf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/functions.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/functions.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/user_list.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/info.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysas/SAS/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/mysas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/mysas/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -86,7 +82,7 @@
       <option name="presentableId" value="Default" />
       <updated>1668735607307</updated>
       <workItem from="1668735608707" duration="12709000" />
-      <workItem from="1668807993221" duration="13035000" />
+      <workItem from="1668807993221" duration="15685000" />
     </task>
     <servers />
   </component>

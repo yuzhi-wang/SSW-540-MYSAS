@@ -1,31 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
+{% block content %}
 <head>
-    <meta charset="UTF-8">
-    <title>Info</title>
-</head>
-<body>
-<h1>Info</h1>
-<table border="1">
-    <thead>
-    <tr>
-        <th>ID</th>
-        <th>username</th>
-        <th>password</th>
-        <th>accounttype</th>
-    </tr>
-    </thead>
-    <tbody>
-    {% for obj in data_list %}
-        <tr>
-            <td>{{ obj.id }}</td>
-            <td>{{ obj.username }}</td>
-            <td>{{ obj.password }}</td>
-            <td>{{ obj.accounttype }}</td>
-        </tr>
-    {% endfor %}
-    </tbody>
-</table>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"
+    integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
+    crossorigin="anonymous" />
 
-</body>
+  <!-- Google Fonts - Press Start 2P -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Home Page </title>
+</head>
+
+<body class="jumbotron">
+    {% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="font-family:Georgia, Garamond, Serif;">
+    <div class="container">
+      <a href="/info/" class="navbar-brand" style="font-size: 20px;"> ELC Attendance Management System
+      </a>
+    </div>
+  </div>
+  </nav>
+
+  <div class="container">
+  <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
+    <h1 class="display-5">STUDENT INFORMATION</h1>
+    <br /> 
+    <hr>   
+
+    <h1 style="text-align: left;font-size: 21px; color:black"> Welcome <span style="color:green">{{ user.username }} </span> to Student Information!</h1>
+    <!-- <h1 style="text-align: left;font-size: 20px; color:black">Thank you for logging in!</h1> -->
+    <div class="row text-center">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card" style="background-color:rgb(0 188 212 / 45%) ;">
+            <div class="card-body" style="width:200px;height:350px">
+                <img class="card-img-top"src="{% static 'images/attendance.jpg' %}" style="width:200px;height:150px ;"></img>
+                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0">Attendance </a>
+                <p class="card-text">View the attendance status for each of your Labs.</p>
+            </div>
+              <!-- <table style="background-color: #96D4D4;border: 1px solid white;font-family:Georgia, Garamond, Serif;color:blue;font-style:italic;">
+              <tr>
+                    <th style = "border: 1px solid white;">Total Attendance</th>
+                    <th style = "border: 1px solid white;">Class Attended</th>
+             </tr>
+             <tr>
+                    <td style = "border: 1px solid white;">10</td>
+                    <td style = "border: 1px solid white;">6</td>
+            </tr>
+            </table> -->
+        </div>
+     
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card" style="background-color:rgb(0 188 212 / 45%) ;">
+            <div class="card-body" style="width:200px;height:350px">
+                <img class="card-img-top"src="{% static 'images/slot2.jpg' %}" style="width:200px;height:150px ;"></img>
+                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0">Book Lab Slot</a>
+                <p class="card-text">Book solt for your Labs.</p>
+            </div>
+        </div>    
+    </div>    
+    
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card" style="background-color:rgb(0 188 212 / 45%) ;">
+            <div class="card-body" style="width:200px;height:350px">
+                <img class="card-img-top"src="{% static 'images/pwd.jpg' %}" style="width:200px;height:150px ;"></img>
+                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0"class="card-title">Change Password</a>
+                <p class="card-text">Update your password</p>
+            </div>
+        </div>
+    </div>
+    </div>
+    <br>
+    </div>
+{#    <!-- <div>#}
+{#        <div class="modal-dialog" role="document">#}
+{#          <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>#}
+{#              <button class="close" type="button" data-dismiss="modal" aria-label="Close">#}
+{#                <span aria-hidden="true">×</span>#}
+{#              </button>#}
+{#            </div>#}
+{#            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>#}
+{#            <div class="modal-footer">#}
+{#              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>#}
+{#              <a class="btn btn-primary"  href="{% url 'logout' %}">Logout</a>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#    </div> -->#}
+    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+    <div class="modal-footer;col-lg-4 col-md-6 mb-8">
+    <p><a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/logout/"> Log Out</a></p>
+    </div>
+{#    {% else %}#}
+{#    <h1 style="font-size: 20px; color:red">You are not logged in</h1>#}
+{#    <br>#}
+{#    <a style="font-size: 16px; text-decoration: none; color:rgb(24, 71, 158);"  href="/logout/">Log In</a>#}
+{#    {% endif %}#}
+    {% endblock %}
+   </div>
+   </div>
+ </body>
 </html>

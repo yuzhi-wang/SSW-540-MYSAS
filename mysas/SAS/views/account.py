@@ -49,7 +49,7 @@ def login(request):
 
         # print(admin_object.accounttype)
         if admin_object.accounttype == "student":
-            return redirect("/student/")
+            return redirect("/info/")
 
         # # 用户名和密码正确
         # # 网站生成随机字符串; 写到用户浏览器的cookie中；在写入到session中；
