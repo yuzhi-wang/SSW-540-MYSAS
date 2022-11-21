@@ -163,30 +163,21 @@
                     </tr>
                   </thead>
                   <tbody>
+                    {% for a in attendance %}
                     <tr>
-                    <td>ELC091A</td>
-                        <td>6</td>
-                        <td>10</td>
-                        <td>40</td>
-                        <td>5</td>
-                    </tr>    
-                    <!-- {% for a in att_list %} -->
-                    <!-- <tr>  have to fetch the value and add details to below tble row -->
-                        <!-- <td>{{ a.course_id }}</td> -->
-                        <!-- <td>{{a.course.name}}</td> -->
-                        <!-- <td>{{ a.att_class }}</td> -->
-                        <!-- <td>{{ a.total_class }}</td> -->
-                        <!-- {% if a.attendance < 75 %} -->
-                            <!-- <td class="p-3 mb-2 bg-danger text-white">{{ a.attendance }}</td> -->
-                        <!-- {% else %} -->
-                            <!-- <td class="p-3 mb-2 bg-success text-white">{{ a.attendance }}</td> -->
-                        <!-- {% endif %} -->
-                        <!-- <td>{{ a.classes_to_attend }}</td> -->
-                    <!-- </tr> -->
-                    <!-- {% empty %} -->
-                            <!-- <p>student has no courses</p> -->
-                    <!-- {% endfor %} -->
-
+                        <td>{{a.batch}}</td>
+                        <td>{{a.attandancenumber}}</td>
+                        <td>{{a.totalclass}}</td>
+                        {% if a.attendancepercentage < 75 %}
+                        <td class="p-3 mb-2 bg-danger text-white">{{ a.attendancepercentage }}</td>
+                        {% else %}
+                        <td class="p-3 mb-2 bg-success text-white">{{ a.attendance }}</td>
+                        {% endif %}
+                        <td>{{a.classtoattend}}</td>
+                    </tr>
+                    {% empty %}
+                    <p>student has no courses</p>
+                    {% endfor %} 
                   </tbody>
                 </table>
               </div>
