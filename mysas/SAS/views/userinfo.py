@@ -15,3 +15,13 @@ def info_list(request):
     data_list = UserInfo.objects.all()
 
     return render(request, "info.html", {"data_list": data_list})
+
+def changePassword(request):
+    return render(request, "changePassword.html")
+
+def viewAttendance(request):
+    return render(request, "viewAttendance.html")
+
+def bookSlot(request):
+    return render(request, "bookSlot.html")
+

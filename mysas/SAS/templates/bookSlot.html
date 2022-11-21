@@ -1,0 +1,280 @@
+<style>
+    .app-time {
+  border: 1px solid #fff;
+  padding: 20px 30px;
+  box-shadow: 2px 4px 10px 0px #c7cacce3;
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 5px;
+  right: 0;
+  bottom: 0;
+  left: 40px;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #fff;
+  border: 1px solid #999;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #e5e7eb;
+}
+.option-input:checked {
+  border: 1px solid #fff;
+}
+.option-input:checked::before {
+  color: #d9486d;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: "✔";
+  display: inline-block;
+  font-size: 12px;
+  left: 4px;
+  line-height: 20px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+.app-check {
+  display: flex;
+}
+.app-border {
+  border: 1px solid #ece9e9;
+  border-radius: 7px;
+  padding: 5px 7px 5px 9px;
+  padding-left: 40px;
+  min-height: 30px;
+}
+
+.option-input.radio:checked + .app-border {
+  background: #486ad9;
+}
+.option-input.radio:disabled,
+.option-input.radio:disabled + .app-border {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.app-label {
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+ 
+  
+}
+
+
+.weekDays-selector input {
+  display: none!important;
+}
+
+.weekDays-selector input[type=checkbox] + label {
+  display: inline-block;
+  border-radius: 6px;
+  background: #dddddd;
+  height: 40px;
+  width: 100px;
+  margin-right: 3px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.weekDays-selector input[type=checkbox]:checked + label {
+  background: #2AD705;
+  color: #ffffff;
+}
+
+</style>
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"
+    integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
+    crossorigin="anonymous" />
+
+  <!-- Google Fonts - Press Start 2P -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Home Page </title>
+</head>
+
+<body class="jumbotron">
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="font-family:Georgia, Garamond, Serif;">
+    <div class="container">
+      <a href="/info/" class="navbar-brand" style="font-size: 20px;"> ELC Attendance Management System
+      </a>
+      <a href="/info/" style="font-size: 20px;">Student Home</a>
+    </div>
+  </div>
+  </nav>
+  <div class="container">
+    <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
+      <h1 class="display-5">Book Slot</h1>
+      <br /> 
+      <hr> 
+    <div class="weekDays-selector">
+    <input type="checkbox" name="weekday"id="weekday1" value="1" onClick="weekDay(this)" class="weekday" />
+    <label for="weekday1">Monday</label>
+    <input type="checkbox" name="weekday"id="weekday2" value="1" onClick="weekDay(this)" class="weekday" />
+    <label for="weekday2">Tuesday</label>
+    <input type="checkbox" name="weekday"id="weekday3" value="1" onClick="weekDay(this)" class="weekday" />
+    <label for="weekday3">Wednesday</label>
+    <input type="checkbox" name="weekday"id="weekday4" value="1" onClick="weekDay(this)" class="weekday" />
+    <label for="weekday4">Thursday</label>
+    <input type="checkbox" name="weekday"id="weekday5" value="1"onClick="weekDay(this)" class="weekday" />
+    <label for="weekday5">Friday</label>
+  </div>
+
+<div class="app-time">
+    <div>
+      <p>Timings</p>
+      <p>9:00AM to 12:00PM</p>
+      <div class="app-check">
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">9:00 AM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">9:30 AM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">10:00 AM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">10:30 AM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">11:00 AM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">11:30 AM
+          </label>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p>Timings</p>
+      <p>1:00PM to 5:00PM</p>
+      <div class="app-check">
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">1:00 PM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">1:30 PM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">2:00 PM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example"  />
+        <div class="app-border">
+  
+          <label class="app-label">2:30 PM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">3:00 PM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example"  />
+        <div class="app-border">
+  
+          <label class="app-label">3:30 PM
+          </label>
+        </div>
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">4:00 PM
+          </label>
+        </div>
+  
+        <input type="radio" class="option-input radio" name="example" />
+        <div class="app-border">
+  
+          <label class="app-label">4:30 PM
+          </label>
+        </div>
+  
+      </div>
+    </div>
+  </div>
+ </div> 
+ <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+ <div class="text-center">
+    <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/info/">Submit</a>
+    <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/logout/"> Log Out</a>
+ </div>
+</div>
+</body>
+<script>
+    function weekDay(wkDay){
+        var wkDay = document.getElementsByName(wkDay.name);
+
+        for(var i=0; i < wkDay.length; i++){
+            if(!wkDay[i].checked){
+                wkDay[i].disabled = true;
+            }else{
+                wkDay[i].disabled = false;
+            }
+        } 
+    }
+</script>
+{% endblock %}

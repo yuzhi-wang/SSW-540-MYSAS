@@ -26,7 +26,10 @@ urlpatterns = [
     # user info present
     path('info/', userinfo.info_list),
     path('student/', userinfo.student),
-    path('teacher/', userinfo.teacher)
+    path('teacher/', userinfo.teacher),
+    path('changePassword/', userinfo.changePassword),
+    path('viewAttendance/', userinfo.viewAttendance),
+    path('bookSlot/', userinfo.bookSlot)
     # test
     # path('test/', userinfo.user_test)
 ]

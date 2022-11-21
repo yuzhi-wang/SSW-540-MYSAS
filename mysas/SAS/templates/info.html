@@ -29,14 +29,14 @@
     <br /> 
     <hr>   
 
-    <h1 style="text-align: left;font-size: 21px; color:black"> Welcome <span style="color:green">{{ user.username }} </span> to Student Information!</h1>
+    <h1 style="text-align: left;font-size: 21px; color:black"> Welcome <span style="color:green"> {{ form.username }} </span> to Student Information!</h1>
     <!-- <h1 style="text-align: left;font-size: 20px; color:black">Thank you for logging in!</h1> -->
     <div class="row text-center">
     <div class="col-lg-3 col-md-6 mb-4">
         <div class="card" style="background-color:rgb(0 188 212 / 45%) ;">
             <div class="card-body" style="width:200px;height:350px">
                 <img class="card-img-top"src="{% static 'images/attendance.jpg' %}" style="width:200px;height:150px ;"></img>
-                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0">Attendance </a>
+                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0"href="/viewAttendance/">Attendance </a>
                 <p class="card-text">View the attendance status for each of your Labs.</p>
             </div>
               <!-- <table style="background-color: #96D4D4;border: 1px solid white;font-family:Georgia, Garamond, Serif;color:blue;font-style:italic;">
@@ -56,7 +56,7 @@
         <div class="card" style="background-color:rgb(0 188 212 / 45%) ;">
             <div class="card-body" style="width:200px;height:350px">
                 <img class="card-img-top"src="{% static 'images/slot2.jpg' %}" style="width:200px;height:150px ;"></img>
-                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0">Book Lab Slot</a>
+                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0"href="/bookSlot/">Book Lab Slot</a>
                 <p class="card-text">Book solt for your Labs.</p>
             </div>
         </div>    
@@ -66,7 +66,7 @@
         <div class="card" style="background-color:rgb(0 188 212 / 45%) ;">
             <div class="card-body" style="width:200px;height:350px">
                 <img class="card-img-top"src="{% static 'images/pwd.jpg' %}" style="width:200px;height:150px ;"></img>
-                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0"class="card-title">Change Password</a>
+                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0"class="card-title"href="/changePassword/">Change Password</a>
                 <p class="card-text">Update your password</p>
             </div>
         </div>
