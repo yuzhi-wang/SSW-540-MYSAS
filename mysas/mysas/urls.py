@@ -30,6 +30,7 @@ urlpatterns = [
     path('changePassword/', userinfo.changePassword),
     path('viewAttendance/', userinfo.viewAttendance),
     path('bookSlot/', userinfo.bookSlot)
+    
     # test
     # path('test/', userinfo.user_test)
 ]
