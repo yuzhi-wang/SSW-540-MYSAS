@@ -19,6 +19,8 @@ from SAS.views import account, userinfo
 
 urlpatterns = [
     # path('index/', account.index),
+    # front page
+    path('', account.login),
 
     # user login
     path('login/', account.login),
