@@ -7,6 +7,8 @@ class UserInfo(models.Model):
     username = models.CharField(max_length=32)
     password = models.CharField(max_length=64)
     accounttype = models.CharField(max_length=16)
+    classnumber = models.CharField(max_length=32, default='NULL')
+    attandancenumber = models.IntegerField(default=0)
 
 
 class Department(models.Model):
