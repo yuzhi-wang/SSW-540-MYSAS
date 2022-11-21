@@ -29,8 +29,11 @@ urlpatterns = [
     path('teacher/', userinfo.teacher),
     path('changePassword/', userinfo.changePassword),
     path('viewAttendance/', userinfo.viewAttendance),
-    path('bookSlot/', userinfo.bookSlot)
+    path('bookSlot/', userinfo.bookSlot),
+    path('teacherAttendance/', userinfo.teacherAttendance),
+    path('teacherMark/', userinfo.teacherMark)
     
+
     # test
     # path('test/', userinfo.user_test)
 ]

@@ -25,3 +25,10 @@ def viewAttendance(request):
 def bookSlot(request):
     return render(request, "bookSlot.html")
 
+def teacherAttendance(request):
+    return render(request, "teacherAttendance.html")
+
+def teacherMark(request):
+    return render(request, "teacherMark.html")
+        
+
