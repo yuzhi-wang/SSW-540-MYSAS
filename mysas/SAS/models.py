@@ -18,7 +18,7 @@ class Department(models.Model):
 class Attendance(models.Model):
     studentID = models.CharField(max_length=32)
     attandancenumber = models.IntegerField(default=0)
-    batch =  models.CharField(max_length=32,default="ELC")
+    batch = models.CharField(max_length=32, default="ELC")
     totalclass = models.IntegerField(default=10)
     attendancepercentage = models.IntegerField(default=0)
     classtoattend = models.IntegerField(default=10)
