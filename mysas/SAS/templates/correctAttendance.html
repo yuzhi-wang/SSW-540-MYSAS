@@ -244,7 +244,7 @@
   </nav>
   <div class="container">
     <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
-      <h1 class="display-5">View Attendance</h1>
+      <h1 class="display-5">Correct Attendance</h1>
       <br /> 
       <hr>
             <div class="card mb-3">
@@ -258,7 +258,7 @@
                     <tr>
                         <th>StudentName</th>
                         <th>Batch name</th>
-                        <th>Mark Attendance</th>
+                        <th>Edit Attendance</th>
                     </tr>
                   </thead>
                   <tbody>
@@ -266,13 +266,7 @@
                     <tr>
                         <td>{{ att.studentID }}</td>
                         <td>{{ att.batch }}</td>
-                        <td>
-                        <label class="switch">
-                            <input class="switch-input" type="checkbox" />
-                            <span class="switch-label" data-on="Yes" data-off="No"></span> 
-                            <span class="switch-handle"></span> 
-                           </label>
-                        </td>
+                        <td>{{att.attnumber}}</td>
                     </tr>
                     {% endfor %}
                     
@@ -280,8 +274,7 @@
                 </table>
               </div>
             </div>
-            <p><strong> Click on correct Attendane to edit the sudent attendance</strong></p>
-            <a style="text-align: left; font-size: 16px; text-decoration: none; color:blueviolet;" href="/correctAttendance/">Correct Attendance</a>
+            <a style="text-align: left; font-size: 16px; text-decoration: none; color:blueviolet;" href="/teacherAttendance/">Go back</a>
           </div>
  </div> 
  <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->

@@ -58,10 +58,17 @@ def bookSlot(request):
 
 
 def teacherAttendance(request):
-    return render(request, "teacherAttendance.html")
+    #context = {}
+    all_att = Attendance.objects.all()
+    #context["attendance"] = all_att
+    return render(request, "teacherAttendance.html",{"objs":all_att})
 
 
 def teacherMark(request):
     return render(request, "teacherMark.html")
+
+def correctAttendance(request):
+    all_att = Attendance.objects.all()
+    return render(request, "correctAttendance.html",{"objs":all_att})    
         
 

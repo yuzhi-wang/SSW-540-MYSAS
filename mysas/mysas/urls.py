@@ -34,7 +34,8 @@ urlpatterns = [
     path('viewAttendance/', userinfo.viewAttendance),
     path('bookSlot/', userinfo.bookSlot),
     path('teacherAttendance/', userinfo.teacherAttendance),
-    path('teacherMark/', userinfo.teacherMark)
+    path('teacherMark/', userinfo.teacherMark),
+    path('correctAttendance/', userinfo.correctAttendance)
     
 
     # test
