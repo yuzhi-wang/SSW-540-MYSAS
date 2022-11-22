@@ -158,26 +158,25 @@
                         <th>Course name</th>
                         <th>Attended classes</th>
                         <th>Total classes</th>
-                        <th>Attendance %</th>
-                        <th>Classes to attend</th>
+{#                        <th>Attendance %</th>#}
+{#                        <th>Classes to attend</th>#}
                     </tr>
                   </thead>
                   <tbody>
-                    {% for a in attendance %}
+
                     <tr>
-                        <td>{{a.batch}}</td>
-                        <td>{{a.attandancenumber}}</td>
-                        <td>{{a.totalclass}}</td>
-                        {% if a.attendancepercentage < 75 %}
-                        <td class="p-3 mb-2 bg-danger text-white">{{ a.attendancepercentage }}</td>
-                        {% else %}
-                        <td class="p-3 mb-2 bg-success text-white">{{ a.attendance }}</td>
-                        {% endif %}
-                        <td>{{a.classtoattend}}</td>
+                        <td>{{ obj.classname }}</td>
+                        <td>{{ obj.attnumber }}</td>
+                        <td>{{ obj.totalclass }}</td>
+{#                        {% if a.attendancepercentage < 75 %}#}
+{#                        <td class="p-3 mb-2 bg-danger text-white">{{ a.attendancepercentage }}</td>#}
+{#                        {% else %}#}
+{#                        <td class="p-3 mb-2 bg-success text-white">{{ a.attendance }}</td>#}
+{#                        {% endif %}#}
+{#                        <td>{{a.classtoattend}}</td>#}
                     </tr>
-                    {% empty %}
-                    <p>student has no courses</p>
-                    {% endfor %} 
+
+
                   </tbody>
                 </table>
               </div>

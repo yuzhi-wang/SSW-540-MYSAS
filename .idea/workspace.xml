@@ -3,8 +3,17 @@
   <component name="ChangeListManager">
     <list default="true" id="155ba7cc-69d6-4e21-a61a-f86089e0aecf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/migrations/0001_initial.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0002_department.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0003_rename_name_userinfo_username_remove_userinfo_age_and_more.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0004_attendance.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/mysas/SAS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/models.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/info.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/student.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/viewAttendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/viewAttendance.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/account.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/mysas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/mysas/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -83,6 +92,7 @@
       <updated>1668735607307</updated>
       <workItem from="1668735608707" duration="12709000" />
       <workItem from="1668807993221" duration="15685000" />
+      <workItem from="1669089151453" duration="10589000" />
     </task>
     <servers />
   </component>

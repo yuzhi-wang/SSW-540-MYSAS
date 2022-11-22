@@ -25,7 +25,7 @@ class LoginForm(BootStrapForm):
 
 
 def login(request):
-    """ 登录 """
+    """ login """
     if request.method == "GET":
         form = LoginForm()
         return render(request, 'login.html', {'form': form})
@@ -41,14 +41,20 @@ def login(request):
         # admin_object = models.Admin.objects.filter(username=xxx, password=xxx).first()
         admin_object = UserInfo.objects.filter(**form.cleaned_data).first()
 
+        # username = admin_object.username
+        # print(admin_object)
+
         # print(accounttype)
         if not admin_object:
             form.add_error("password", "wrong user name or password")
-            # form.add_error("username", "用户名或密码错误")
             return render(request, 'login.html', {'form': form})
 
         # print(admin_object.accounttype)
         if admin_object.accounttype == "student":
+            request.session['info'] = admin_object.studentID
+            request.session.set_expiry(60 * 60 * 24)
+            # studentid = request.session.get('info')
+            # print(studentid)
             return redirect("/info/")
 
         # # 用户名和密码正确
