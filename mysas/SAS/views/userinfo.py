@@ -54,12 +54,17 @@ def viewAttendance(request):
 
 
 def bookSlot(request):
-    return render(request, "bookSlot.html")
+   studentid = request.session.get('info')
+   if not studentid:
+        return redirect('/login/')
+   attend_object = UserInfo.objects.filter(studentID=studentid).first()
+
+   return render(request, "bookSlot.html",{"obj":attend_object})
 
 
 def teacherAttendance(request):
     #context = {}
-    all_att = Attendance.objects.all()
+    all_att = UserInfo.objects.all()
     #context["attendance"] = all_att
     return render(request, "teacherAttendance.html",{"objs":all_att})
 
@@ -68,7 +73,7 @@ def teacherMark(request):
     return render(request, "teacherMark.html")
 
 def correctAttendance(request):
-    all_att = Attendance.objects.all()
+    all_att = UserInfo.objects.all()
     return render(request, "correctAttendance.html",{"objs":all_att})    
         
 
