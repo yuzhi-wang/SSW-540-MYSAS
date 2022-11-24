@@ -134,7 +134,7 @@
     <div class="container">
       <a href="/info/" class="navbar-brand" style="font-size: 20px;"> ELC Attendance Management System
       </a>
-      
+
       <a href="/info/" style="font-size: 20px;">Student Home</a>
     </div>
   </div>
@@ -143,122 +143,54 @@
     <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
       <h1 class="display-5">Book Slot</h1>
       <br /> 
-      <hr> 
-    <div class="weekDays-selector">
-    <input type="checkbox" name="weekday"id="weekday1" value="1" onClick="weekDay(this)" class="weekday" />
-    <label for="weekday1">Monday</label>
-    <input type="checkbox" name="weekday"id="weekday2" value="1" onClick="weekDay(this)" class="weekday" />
-    <label for="weekday2">Tuesday</label>
-    <input type="checkbox" name="weekday"id="weekday3" value="1" onClick="weekDay(this)" class="weekday" />
-    <label for="weekday3">Wednesday</label>
-    <input type="checkbox" name="weekday"id="weekday4" value="1" onClick="weekDay(this)" class="weekday" />
-    <label for="weekday4">Thursday</label>
-    <input type="checkbox" name="weekday"id="weekday5" value="1"onClick="weekDay(this)" class="weekday" />
-    <label for="weekday5">Friday</label>
-  </div>
-
-<div class="app-time">
-    <div>
-      <p>Timings</p>
-      <p>9:00AM to 12:00PM</p>
-      <div class="app-check">
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">9:00 AM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">9:30 AM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">10:00 AM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">10:30 AM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">11:00 AM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">11:30 AM
-          </label>
-        </div>
-      </div>
-    </div>
-    <div>
-      <p>Timings</p>
-      <p>1:00PM to 5:00PM</p>
-      <div class="app-check">
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">1:00 PM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">1:30 PM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">2:00 PM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example"  />
-        <div class="app-border">
-  
-          <label class="app-label">2:30 PM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">3:00 PM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example"  />
-        <div class="app-border">
-  
-          <label class="app-label">3:30 PM
-          </label>
-        </div>
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">4:00 PM
-          </label>
-        </div>
-  
-        <input type="radio" class="option-input radio" name="example" />
-        <div class="app-border">
-  
-          <label class="app-label">4:30 PM
-          </label>
-        </div>
-  
-      </div>
-    </div>
-  </div>
- </div> 
- <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+      <hr>
+            <div class="card mb-3">
+            <div class="card-header" style="background-color:rgb(47 164 231 / 25%) ;">
+              <i class="fas fa-table"></i>
+            <b style="color:#0088cc;">Book Slot</b>
+            </div>
+            <div class="card-body" style="background-color:rgb(134 142 150 / 21%);">
+              <div class="table-responsive">
+                <div id="table" class="table-editable;table table-bordered text-center" id="dataTable" width="100%" cellspacing="0" style="background-color:rgb(47 164 231 / 6%) ; border: 1px solid white;border-collapse: collapse;">  
+                  <table class="table">  
+                    <tr style="border: 1px solid white;border-collapse: collapse;">  
+                      <th style="border: 1px solid white;border-collapse: collapse;"> Student Id</th>  
+                      <th style="border: 1px solid white;border-collapse: collapse;"> Class Name</th>  
+                      <th style="border: 1px solid white;border-collapse: collapse;"> Date </th>  
+                      <th style="border: 1px solid white;border-collapse: collapse;"> Time </th>  
+                    </tr>  
+                    <tr> 
+                      <td contenteditable="false" style="border: 1px solid white;border-collapse: collapse;">{{ obj.id }}</td>
+                      <td contenteditable="false" style="border: 1px solid white;border-collapse: collapse;">{{ obj.classname }}</td>
+                      <td contenteditable="true" style="border: 1px solid white;border-collapse: collapse;"><input name ="setTodaysDate" type="date"></td>
+                      <td contenteditable="true" style="border: 1px solid white;border-collapse: collapse;">
+                          <select name="time" id="time">
+                            <option value="time1">9:00 AM</option>
+                            <option value="time2">9:30 AM</option>
+                            <option value="time3">10:00 AM</option>
+                            <option value="time4">10:30 AM</option>
+                            <option value="time5">11:00 AM</option>
+                            <option value="time6">11:30 AM</option>
+                            <option value="time7">12:00 PM</option>
+                            <option value="time8">12:30 PM</option>
+                            <option value="time7">1:00 PM</option>
+                            <option value="time8">1:30 PM</option>
+                            <option value="time7">2:00 PM</option>
+                            <option value="time8">2:30 PM</option>
+                            <option value="time7">3:00 PM</option>
+                            <option value="time8">3:30 PM</option>
+                            <option value="time7">4:00 PM</option>
+                            <option value="time8">4:30 PM</option>
+                            <option value="time7">5:00 PM</option>
+                          </select>
+                      </td>
+                    </tr>  
+                  </table>
+                  </div>
+              </div>
+            </div>
+          </div>
+ </div>
  <div class="text-center">
     <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/info/">Submit</a>
     <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/logout/"> Log Out</a>
@@ -266,6 +198,10 @@
 </div>
 </body>
 <script>
+   window.onload=function(){//from ww  w . j  a  va2s. c  o  m
+var today = new Date().toISOString().split('T')[0];
+document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
+    }
     function weekDay(wkDay){
         var wkDay = document.getElementsByName(wkDay.name);
 

@@ -112,6 +112,108 @@
   color: #ffffff;
 }
 
+.switch {
+  position: relative;
+  display: block;
+  vertical-align: top;
+  width: 100px;
+  height: 30px;
+  padding: 3px;
+  margin: 0 10px 10px 0;
+  background: linear-gradient(to bottom, #eeeeee, #FFFFFF 25px);
+  background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF 25px);
+  border-radius: 18px;
+  box-shadow: inset 0 -1px white, inset 0 1px 1px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+}
+.switch-input {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+}
+.switch-label {
+  position: relative;
+  display: block;
+  height: inherit;
+  font-size: 10px;
+  text-transform: uppercase;
+  background: #eceeef;
+  border-radius: inherit;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.12), inset 0 0 2px rgba(0, 0, 0, 0.15);
+}
+.switch-label:before, .switch-label:after {
+  position: absolute;
+  top: 50%;
+  margin-top: -.5em;
+  line-height: 1;
+  -webkit-transition: inherit;
+  -moz-transition: inherit;
+  -o-transition: inherit;
+  transition: inherit;
+}
+.switch-label:before {
+  content: attr(data-off);
+  right: 11px;
+  color: #aaaaaa;
+  text-shadow: 0 1px rgba(255, 255, 255, 0.5);
+}
+.switch-label:after {
+  content: attr(data-on);
+  left: 11px;
+  color: #FFFFFF;
+  text-shadow: 0 1px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+}
+.switch-input:checked ~ .switch-label {
+  background: #00cc8a;
+  border-color: #0088cc;
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.15), inset 0 0 3px rgba(0, 0, 0, 0.2);
+}
+.switch-input:checked ~ .switch-label:before {
+  opacity: 0;
+}
+.switch-input:checked ~ .switch-label:after {
+  opacity: 1;
+}
+.switch-handle {
+  position: absolute;
+  top: 4px;
+  left: 4px;
+  width: 28px;
+  height: 28px;
+  background: linear-gradient(to bottom, #FFFFFF 40%, #f0f0f0);
+  background-image: -webkit-linear-gradient(top, #FFFFFF 40%, #f0f0f0);
+  border-radius: 100%;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+.switch-handle:before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -6px 0 0 -6px;
+  width: 12px;
+  height: 12px;
+  background: linear-gradient(to bottom, #eeeeee, #FFFFFF);
+  background-image: -webkit-linear-gradient(top, #eeeeee, #FFFFFF);
+  border-radius: 6px;
+  box-shadow: inset 0 1px rgba(0, 0, 0, 0.02);
+}
+.switch-input:checked ~ .switch-handle {
+  left: 74px;
+  box-shadow: -1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Transition
+========================== */
+.switch-label, .switch-handle {
+  transition: All 0.3s ease;
+  -webkit-transition: All 0.3s ease;
+  -moz-transition: All 0.3s ease;
+  -o-transition: All 0.3s ease;
+}
+
 </style>
 {% extends 'info.html' %}
 {% block content %}
@@ -136,56 +238,48 @@
       <a href="/info/" class="navbar-brand" style="font-size: 20px;"> ELC Attendance Management System
       </a>
 
-      <a href="/info/" style="font-size: 20px;">Student Home</a>
+      <a href="/teacher/" style="font-size: 20px;">Admin Home</a>
     </div>
   </div>
   </nav>
   <div class="container">
     <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
-      <h1 class="display-5">View Attendance</h1>
+      <h1 class="display-5">Correct Attendance</h1>
       <br /> 
       <hr>
             <div class="card mb-3">
-            <div class="card-header" style="background-color:rgb(47 164 231 / 25%) ;">
+            <div class="card-header">
               <i class="fas fa-table"></i>
-            <b style="color:#0088cc;">Attendance</b></div>
-            <div class="card-body" style="background-color:rgb(134 142 150 / 21%);">
+            <b>Attendance</b></div>
+            <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0" style="background-color:rgb(47 164 231 / 6%)">
+                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0">
                   <thead class="thead-light ">
-                    <tr style="border: 1px solid white;border-collapse: collapse;">
-                        <!-- <th>Batch</th> -->
-                        <th style="border: 1px solid white;border-collapse: collapse;">Course name</th>
-                        <th style="border: 1px solid white;border-collapse: collapse;">Attended classes</th>
-                        <th style="border: 1px solid white;border-collapse: collapse;">Total classes</th>
-{#                        <th style="border: 1px solid white;border-collapse: collapse;">Attendance %</th>#}
-{#                        <th style="border: 1px solid white;border-collapse: collapse;">Classes to attend</th>#}
+                    <tr>
+                        <th>StudentName</th>
+                        <th>Batch name</th>
+                        <th>Edit Attendance</th>
                     </tr>
                   </thead>
                   <tbody>
-
+                    {% for att in objs %}
                     <tr>
-                        <td>{{ obj.classname }}</td>
-                        <td>{{ obj.attnumber }}</td>
-                        <td>{{ obj.totalclass }}</td>
-{#                        {% if a.attendancepercentage < 75 %}#}
-{#                        <td class="p-3 mb-2 bg-danger text-white">{{ a.attendancepercentage }}</td>#}
-{#                        {% else %}#}
-{#                        <td class="p-3 mb-2 bg-success text-white">{{ a.attendance }}</td>#}
-{#                        {% endif %}#}
-{#                        <td>{{a.classtoattend}}</td>#}
+                        <td>{{ att.username }}</td>
+                        <td>{{ att.classname }}</td>
+                        <td>{{att.attnumber}}</td>
                     </tr>
-
-
+                    {% endfor %}
+                    
                   </tbody>
                 </table>
               </div>
             </div>
+            <a style="text-align: left; font-size: 16px; text-decoration: none; color:blueviolet;" href="/teacherAttendance/">Go back</a>
           </div>
  </div> 
  <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
  <div class="text-center">
-    <!-- <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/info/">Submit</a> -->
+    <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/teacher/">Submit</a>
     <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/logout/"> Log Out</a>
  </div>
 </div>
