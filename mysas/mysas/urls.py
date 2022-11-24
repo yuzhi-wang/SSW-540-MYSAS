@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from SAS.views import account, userinfo
 
+#from django.contrib.auth import views as auth_views
+
 urlpatterns = [
     # path('index/', account.index),
     # front page
@@ -30,7 +32,9 @@ urlpatterns = [
     path('student/', userinfo.student),
     path('teacher/', userinfo.teacher),
 
+    #path('changePassword/', auth_views.PasswordChangeView.as_view()),
     path('changePassword/', userinfo.changePassword),
+    path('savePassword/', userinfo.savePassword,name="savePassword"),
     path('viewAttendance/', userinfo.viewAttendance),
     path('bookSlot/', userinfo.bookSlot),
     path('teacherAttendance/', userinfo.teacherAttendance),
