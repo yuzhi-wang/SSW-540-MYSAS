@@ -65,7 +65,7 @@ def viewAttendance(request):
     if not studentid:
         return redirect('/login/')
     attend_object = UserInfo.objects.filter(studentID=studentid).first()
-    form=studpass
+    #form=studpass
 
     # context = {}
     # all_att = Attendance.objects.all()
