@@ -39,12 +39,12 @@
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="form-group">
-            <label><strong>username</strong></label>
+            <label style="color: white;"><strong>username</strong></label>
             {{ form.username }}
             <span style="color: red;">{{ form.username.errors.0 }}</span>
         </div>
         <div class="form-group">
-            <label>password</label>
+            <label style="color: white;"><strong>password</strong></label>
             {{ form.password }}
             <span style="color: red;">{{ form.password.errors.0 }}</span>
         </div>
