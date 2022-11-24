@@ -3,17 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="155ba7cc-69d6-4e21-a61a-f86089e0aecf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0001_initial.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/migrations/0001_initial.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0002_department.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0003_rename_name_userinfo_username_remove_userinfo_age_and_more.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/migrations/0004_attendance.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/viewAttendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/viewAttendance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/mysas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/mysas/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,17 +34,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/wyz-0/Desktop/笔记和代码/day18 Django开发&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "C:/Users/wyz-0/Desktop/笔记和代码/day18 Django开发",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "com.jetbrains.django.DjangoModulesConfigurable"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="mysas" type="Python.DjangoServer" factoryName="Django server">
       <module name="SSW-540-MYSAS" />
@@ -92,7 +81,8 @@
       <updated>1668735607307</updated>
       <workItem from="1668735608707" duration="12709000" />
       <workItem from="1668807993221" duration="15685000" />
-      <workItem from="1669089151453" duration="10589000" />
+      <workItem from="1669089151453" duration="11185000" />
+      <workItem from="1669168072557" duration="1548000" />
     </task>
     <servers />
   </component>
