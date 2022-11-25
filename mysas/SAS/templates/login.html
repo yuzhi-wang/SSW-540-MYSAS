@@ -23,25 +23,33 @@
             margin-top: 10px;
             text-align: center;
         }
+        
+        
+        #bg{
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 1400px;
+        }
+        
     </style>
 </head>
-<body>
-<div class="account">
-    <h2>Account Login</h2>
+<body id="bg" style="background-image: url('{% static 'images/stevens.jpg' %}');">
+<div class="account" >
+    <h2 style="color: #a32638;"><strong> Account Login </strong></h2>
     <form method="post" novalidate>
         {% csrf_token %}
         <div class="form-group">
-            <label>username</label>
+            <label style="color: white;"><strong>username</strong></label>
             {{ form.username }}
-            <span style="color: red;">{{ form.username.errors.0 }}</span>
+            <span style="color: #a32638;"><strong>{{ form.username.errors.0 }}</strong></span>
         </div>
         <div class="form-group">
-            <label>password</label>
+            <label style="color: white;"><strong>password</strong></label>
             {{ form.password }}
-            <span style="color: red;">{{ form.password.errors.0 }}</span>
+            <span style="color: #a32638;"><strong>{{ form.password.errors.0 }}</strong></span>
         </div>
 
-        <input type="submit" value="login" class="btn btn-primary">
+        <input type="submit" value="login" class="btn btn-primary" style="background-color: #a32638;">
     </form>
 </div>
 

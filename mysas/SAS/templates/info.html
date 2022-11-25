@@ -16,9 +16,9 @@
     {% load static %}
     <body class="jumbotron">    
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="font-family:Georgia, Garamond, Serif;">
+  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="font-family:Georgia, Garamond, Serif; background-image:linear-gradient(var(--red),var(--red) 60%,var(--red));">
     <div class="container">
-      <a href="/info/" class="navbar-brand" style="font-size: 20px;"> ELC Attendance Management System
+      <a href="/info/" class="navbar-brand" style="font-size: 20px;" > ELC Attendance Management System
       </a>
     </div>
   </div>
@@ -26,11 +26,11 @@
 
   <div class="container" >
   <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
-    <h1 class="display-5">STUDENT INFORMATION</h1>
+    <h1 class="display-5" style="color:#a32638; align-content: left;">STUDENT INFORMATION</h1>
     <br /> 
     <hr>   
 
-    <h1 style="text-align: left;font-size: 21px; color:black"> Welcome <span style="color:green"> {{ data_obj.username }} </span> to Student Information!</h1>
+    <h1 style="text-align: left;font-size: 21px; color:#a32638"> Welcome <span style="color:green"> {{ data_obj.username }} </span> to Student Information!</h1>
     <!-- <h1 style="text-align: left;font-size: 20px; color:black">Thank you for logging in!</h1> -->
     <div class="row text-center">
     <div class="col-lg-3 col-md-6 mb-4">
@@ -93,8 +93,8 @@
 {#        </div>#}
 {#    </div> -->#}
     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
-    <div class="modal-footer;col-lg-4 col-md-6 mb-8">
-    <p><a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/logout/"> Log Out</a></p>
+    <div class="modal-footer;col-lg-4 col-md-6 mb-8" >
+    <p><a class="btn btn-primary" style="background-image: linear-gradient(#a32638,#a32638 60%,#a32638);" href="/logout/"> Log Out</a></p>
     </div>
 {#    {% else %}#}
 {#    <h1 style="font-size: 20px; color:red">You are not logged in</h1>#}
