@@ -35,9 +35,10 @@ urlpatterns = [
     path('bookSlot/', userinfo.bookSlot),
     path('teacherAttendance/', userinfo.teacherAttendance),
     path('teacherMark/', userinfo.teacherMark),
-    path('correctAttendance/', userinfo.correctAttendance)
+    path('correctAttendance/', userinfo.correctAttendance),
     
 
     # test
+    path('layout/', account.layout)
     # path('test/', userinfo.user_test)
 ]

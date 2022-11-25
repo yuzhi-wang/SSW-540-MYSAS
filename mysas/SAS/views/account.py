@@ -26,10 +26,13 @@ class LoginForm(BootStrapForm):
 
 def login(request):
     """ login """
+    # use get to upload data
     if request.method == "GET":
         form = LoginForm()
         return render(request, 'login.html', {'form': form})
-
+    # use post to download data
+    name = request.POST.get("username")
+    # print(name)
     form = LoginForm(data=request.POST)
     if form.is_valid():
         # print(form.cleaned_data)
@@ -73,3 +76,7 @@ def logout(request):
     request.session.clear()
 
     return redirect('/login/')
+
+
+def layout(request):
+    return render(request, "layout.html")
