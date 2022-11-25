@@ -10,14 +10,24 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
   <title>Home Page </title>
+  <style>
+    #topic {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 3.125rem;
+    background: #a32638;
+}
+  </style>
 </head>
 
 
     {% load static %}
     <body class="jumbotron">    
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="font-family:Georgia, Garamond, Serif; background-image:linear-gradient(var(--red),var(--red) 60%,var(--red));">
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-image: linear-gradient(#495057,#495057 60%,#343a40);">
+  <div id ="topic"class="header_mobile-nav__wvOoU">
     <div class="container">
+      <a> <img src="{% static 'images/stevenslogo2.jpg' %}" style="width:70px;height:70px ;"></a>
       <a href="/info/" class="navbar-brand" style="font-size: 20px;" > ELC Attendance Management System
       </a>
     </div>
