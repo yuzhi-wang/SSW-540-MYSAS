@@ -30,6 +30,7 @@ urlpatterns = [
     # function for student
     path('viewAttendance/', userinfo.viewAttendance),
     path('bookSlot/', record.bookSlot),
+    path('cancelSlot/', record.cancel_slot),
     path('changePassword/', userinfo.changePassword),
     # functions for teacher
     path('teacher/', record.teacher),

@@ -135,7 +135,7 @@
   <!-- Google Fonts - Press Start 2P -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
-  <title>Home Page </title>
+  <title>View Attendance </title>
 </head>
 
 <body class="jumbotron">
@@ -165,6 +165,7 @@
                   <thead class="thead-light ">
                     <tr style="border: 1px solid white;border-collapse: collapse;">
                         <!-- <th>Batch</th> -->
+                        <th style="border: 1px solid white;border-collapse: collapse;">Student ID</th>
                         <th style="border: 1px solid white;border-collapse: collapse;">Course name</th>
                         <th style="border: 1px solid white;border-collapse: collapse;">Attended classes</th>
                         <th style="border: 1px solid white;border-collapse: collapse;">Total classes</th>
@@ -175,6 +176,7 @@
                   <tbody>
 
                     <tr>
+                        <td>{{ obj.studentID }}</td>
                         <td>{{ obj.classname }}</td>
                         <td>{{ obj.attnumber }}</td>
                         <td>{{ obj.totalclass }}</td>

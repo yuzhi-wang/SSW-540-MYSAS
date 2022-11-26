@@ -16,6 +16,12 @@ class SlotModelForm(forms.ModelForm):
         fields = ["date", "starttime"]
 
 
+class CancelModelForm(forms.ModelForm):
+    class Meta:
+        model = models.Attendance
+        fields = ["date", "starttime"]
+
+
 def teacher(request):
     studentid = request.session.get('info')
     if not studentid:
@@ -35,8 +41,10 @@ def bookSlot(request):
     #     print(item.studentID)
     if request.method == "GET":
         form = SlotModelForm()
+
         return render(request, "bookSlot.html", {"attend_obj": attend_obj,
-                                                 "form": form})
+                                                 "form": form,
+                                                 })
     form = SlotModelForm(data=request.POST)
     if form.is_valid():
         newdate = form.cleaned_data.get("date")
@@ -45,7 +53,8 @@ def bookSlot(request):
         if date_obj:
             form.add_error("starttime", "Duplicated Date")
             return render(request, "bookSlot.html", {"attend_obj": attend_obj,
-                                                     "form": form})
+                                                     "form": form,
+                                                     })
         Attendance.objects.create(studentID=studentid,
                                   classname=account_obj.classname,
                                   date=newdate,
@@ -54,10 +63,51 @@ def bookSlot(request):
                                   grade=0
                                   )
         return render(request, "bookSlot.html", {"attend_obj": attend_obj,
-                                                 "form": form})
+                                                 "form": form,
+                                                 })
+    # if cform.is_valid():
+    #     newdate = form.cleaned_data.get("date")
+    #     date_obj = Attendance.objects.filter(date=newdate).first()
+    #     if not date_obj:
+    #         Attendance.objects.filter(date=newdate).delete()
+    #         return render(request, "bookSlot.html", {"attend_obj": attend_obj,
+    #                                                  "form": form,
+    #                                                  "cform": cform})
+    #     cform.add_error("starttime", "No such date record")
+    #     return render(request, "bookSlot.html", {"attend_obj": attend_obj,
+    #                                              "form": form,
+    #                                              "cform": cform})
     form.add_error("starttime", "Date or Time is unavailable")
     return render(request, "bookSlot.html", {"attend_obj": attend_obj,
                                              "form": form})
+
+
+def cancel_slot(request):
+    studentid = request.session.get('info')
+    if not studentid:
+        return redirect('/login/')
+    account_obj = UserInfo.objects.filter(studentID=studentid).first()
+    attend_obj = Attendance.objects.filter(studentID=studentid)
+    if request.method == "GET":
+        cform = CancelModelForm()
+        return render(request, "cancelSlot.html", {"attend_obj": attend_obj,
+                                                   "cform": cform})
+    cform = CancelModelForm(data=request.POST)
+    if cform.is_valid():
+        newdate = cform.cleaned_data.get("date")
+        print(newdate)
+        date_obj = Attendance.objects.filter(date=newdate).first()
+        print(date_obj)
+        if date_obj:
+            Attendance.objects.filter(date=newdate).delete()
+            return render(request, "cancelSlot.html", {"attend_obj": attend_obj,
+                                                       "cform": cform})
+        cform.add_error("starttime", "No such date record")
+        return render(request, "cancelSlot.html", {"attend_obj": attend_obj,
+                                                   "cform": cform})
+    cform.add_error("starttime", "Date or Time is unavailable")
+    return render(request, "cancelSlot.html", {"attend_obj": attend_obj,
+                                               "cform": cform})
 
 
 def teacherAttendance(request):
