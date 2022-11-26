@@ -34,6 +34,7 @@ def changePassword(request):
     if request.method == "GET":
         form = UserModelForm()
         return render(request, "changePassword.html", {"form": form})
+
     form = UserModelForm(data=request.POST)
     if form.is_valid():
         newpwd = form.cleaned_data.get("password")

@@ -41,7 +41,11 @@ def bookSlot(request):
     if form.is_valid():
         newdate = form.cleaned_data.get("date")
         newtime = form.cleaned_data.get("starttime")
-        # date_obj =
+        date_obj = Attendance.objects.filter(date=newdate).first()
+        if date_obj:
+            form.add_error("starttime", "Duplicated Date")
+            return render(request, "bookSlot.html", {"attend_obj": attend_obj,
+                                                     "form": form})
         Attendance.objects.create(studentID=studentid,
                                   classname=account_obj.classname,
                                   date=newdate,
