@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from SAS.views import account, userinfo
+from SAS.views import account, userinfo, record
 
 urlpatterns = [
     # path('index/', account.index),
@@ -25,20 +25,20 @@ urlpatterns = [
     # user login
     path('login/', account.login),
     path('logout/', account.logout),
-    # user info present
+    # student info present
     path('info/', userinfo.info_list),
-    path('student/', userinfo.student),
-    path('teacher/', userinfo.teacher),
-
-    path('changePassword/', userinfo.changePassword),
+    # function for student
     path('viewAttendance/', userinfo.viewAttendance),
-    path('bookSlot/', userinfo.bookSlot),
-    path('teacherAttendance/', userinfo.teacherAttendance),
-    path('teacherMark/', userinfo.teacherMark),
-    path('correctAttendance/', userinfo.correctAttendance),
+    path('bookSlot/', record.bookSlot),
+    path('changePassword/', userinfo.changePassword),
+    # functions for teacher
+    path('teacher/', record.teacher),
+    path('teacherAttendance/', record.teacherAttendance),
+
     
 
     # test
+    path('student/', userinfo.student),
     path('layout/', account.layout)
     # path('test/', userinfo.user_test)
 ]

@@ -18,13 +18,13 @@ class UserInfo(models.Model):
 
 
 class Attendance(models.Model):
-    studentID = models.CharField(max_length=32)
-    attnumber = models.IntegerField(default=0)
-    batch = models.CharField(max_length=32, default="ELC")
-    totalclass = models.IntegerField(default=10)
-    attendancepercentage = models.IntegerField(default=0)
-    classtoattend = models.IntegerField(default=10)
-    classname = models.CharField(max_length=32, default="000")
+    studentID = models.CharField(verbose_name="studentID", max_length=32)
+    classname = models.CharField(verbose_name="classname", max_length=32)
+    date = models.DateField(verbose_name="date")
+    starttime = models.IntegerField(verbose_name="starttime")
+    attendance = models.CharField(verbose_name="attendance", max_length=16)
+    grade = models.IntegerField(verbose_name="grade")
+
     
 
 # UserInfo.objects.create(username="yuzhi", password="123456", accounttype="teacher")

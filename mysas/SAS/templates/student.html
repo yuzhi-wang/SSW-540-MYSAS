@@ -8,17 +8,55 @@
             <div class="panel-heading">
                 <h3 class="panel-title"> 新建用户 </h3>
             </div>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0" style="background-color:rgb(47 164 231 / 6%)">
+                  <thead class="thead-light ">
+                    <tr style="border: 1px solid white;border-collapse: collapse;">
+                        <!-- <th>Batch</th> -->
+                        <th style="border: 1px solid white;border-collapse: collapse;">Student ID</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Class Name</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Attendance</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Date</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Start Time</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Grade</th>
+{#                        <th style="border: 1px solid white;border-collapse: collapse;">Attendance %</th>#}
+{#                        <th style="border: 1px solid white;border-collapse: collapse;">Classes to attend</th>#}
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {% for item in obj %}
+                      <tr>
+                            <td>{{ item.studentID }}</td>
+                            <td>{{ item.classname }}</td>
+                            <td>{{ item.attendance }}</td>
+                            <td>{{ item.date }}</td>
+                            <td>{{ item.starttime }}</td>
+                            <td>{{ item.grade }}</td>
+                      </tr>
+                  {% endfor %}
+
+
+
+                  </tbody>
+                </table>
+              </div>
             <div class="panel-body">
                 <form method="post" novalidate>
                     {% csrf_token %}
 
 
                     <div class="form-group">
-                        <label>{{ form.password.label }}</label>
-                        {{ form.password }}
-                        <label>{{ form.cpassword.label }}</label>
-                        {{ form.cpassword }}
-                        <span style="color: red;">{{ form.cpassword.errors.0 }}</span>
+                        <label>{{ form.studentID.label }}</label>
+                        {{ form.studentID }}
+                        <label>{{ form.date.label }}</label>
+                        {{ form.date }}
+                        <label>{{ form.starttime.label }}</label>
+                        {{ form.starttime }}
+                        <label>{{ form.attendance.label }}</label>
+                        {{ form.attendance }}
+                        <label>{{ form.grade.label }}</label>
+                        {{ form.grade }}
+                        <span style="color: red;">{{ form.grade.errors.0 }}</span>
                     </div>
 
 

@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django import forms
 
 from SAS import models
-from SAS.models import UserInfo, Attendance
+from SAS.models import UserInfo
 
 
 class UserModelForm(forms.ModelForm):
@@ -15,19 +15,16 @@ def student(request):
     studentid = request.session.get('info')
     if not studentid:
         return redirect('/login/')
-
-
-def teacher(request):
-    return render(request, "teacher.html")
+    return render(request, "student.html")
 
 
 def info_list(request):
     studentid = request.session.get('info')
     if not studentid:
         return redirect('/login/')
-    attend_object = UserInfo.objects.filter(studentID=studentid).first()
+    account_object = UserInfo.objects.filter(studentID=studentid).first()
 
-    return render(request, "info.html", {"data_obj": attend_object})
+    return render(request, "info.html", {"data_obj": account_object})
 
 
 def changePassword(request):
@@ -55,30 +52,11 @@ def viewAttendance(request):
     studentid = request.session.get('info')
     if not studentid:
         return redirect('/login/')
-    attend_object = UserInfo.objects.filter(studentID=studentid).first()
-    return render(request, "viewAttendance.html", {"obj": attend_object})
+    account_object = UserInfo.objects.filter(studentID=studentid).first()
+    return render(request, "viewAttendance.html", {"obj": account_object})
 
 
-def bookSlot(request):
-    studentid = request.session.get('info')
-    if not studentid:
-        return redirect('/login/')
-    attend_object = UserInfo.objects.filter(studentID=studentid).first()
-
-    return render(request, "bookSlot.html", {"obj": attend_object})
 
 
-def teacherAttendance(request):
-    # context = {}
-    all_att = UserInfo.objects.all()
-    # context["attendance"] = all_att
-    return render(request, "teacherAttendance.html", {"objs": all_att})
 
 
-def teacherMark(request):
-    return render(request, "teacherMark.html")
-
-
-def correctAttendance(request):
-    all_att = UserInfo.objects.all()
-    return render(request, "correctAttendance.html", {"objs": all_att})

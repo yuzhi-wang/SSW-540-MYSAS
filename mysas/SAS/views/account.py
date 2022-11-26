@@ -31,7 +31,7 @@ def login(request):
         form = LoginForm()
         return render(request, 'login.html', {'form': form})
     # use post to download data
-    name = request.POST.get("username")
+    # name = request.POST.get("username")
     # print(name)
     form = LoginForm(data=request.POST)
     if form.is_valid():
@@ -59,12 +59,10 @@ def login(request):
             # studentid = request.session.get('info')
             # print(studentid)
             return redirect("/info/")
-
-        # # 用户名和密码正确
-        # # 网站生成随机字符串; 写到用户浏览器的cookie中；在写入到session中；
-        # request.session["info"] = {'id': admin_object.id, 'name': admin_object.username}
-        # # session可以保存7天
-        # request.session.set_expiry(60 * 60 * 24 * 7)
+        request.session['info'] = admin_object.studentID
+        request.session.set_expiry(60 * 60 * 24)
+        # studentid = request.session.get('info')
+        # print(studentid)
         return redirect("/teacher/")
 
     return render(request, 'login.html', {'form': form})
