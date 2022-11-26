@@ -15,6 +15,8 @@
                         <!-- <th>Batch</th> -->
                         <th style="border: 1px solid white;border-collapse: collapse;">Student ID</th>
                         <th style="border: 1px solid white;border-collapse: collapse;">Class Name</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Date</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Start Time</th>
 {#                        <th style="border: 1px solid white;border-collapse: collapse;">Attendance</th>#}
 {#                        <th style="border: 1px solid white;border-collapse: collapse;">Date</th>#}
 {#                        <th style="border: 1px solid white;border-collapse: collapse;">Start Time</th>#}
@@ -24,20 +26,20 @@
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                        <td>{{ account_obj.username }}</td>
-                        <td>{{ account_obj.classname }}</td>
-                    </tr>
-{#                  {% for item in obj %}#}
-{#                      <tr>#}
-{#                            <td>{{ item.studentID }}</td>#}
-{#                            <td>{{ item.classname }}</td>#}
+{#                    <tr>#}
+{#                        <td>{{ account_obj.username }}</td>#}
+{#                        <td>{{ account_obj.classname }}</td>#}
+{#                    </tr>#}
+                    {% for item in attend_obj %}
+                        <tr>
+                            <td>{{ item.studentID }}</td>
+                            <td>{{ item.classname }}</td>
 {#                            <td>{{ item.attendance }}</td>#}
-{#                            <td>{{ item.date }}</td>#}
-{#                            <td>{{ item.starttime }}</td>#}
+                            <td>{{ item.date }}</td>
+                            <td>{{ item.starttime }}</td>
 {#                            <td>{{ item.grade }}</td>#}
-{#                      </tr>#}
-{#                  {% endfor %}#}
+                        </tr>
+                    {% endfor %}
 
 
 
@@ -64,7 +66,7 @@
                     </div>
 
 
-                    <button type="submit" class="btn btn-primary" style="text-align: center; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);">Submit</button>
+                    <button type="submit" class="btn btn-primary" style="text-align: center; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);">Add</button>
                 </form>
             </div>
         </div>

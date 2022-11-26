@@ -1,3 +1,4 @@
+from django.core.validators import MinValueValidator, MaxValueValidator
 from django.db import models
 
 # Create your models here.
@@ -21,9 +22,13 @@ class Attendance(models.Model):
     studentID = models.CharField(verbose_name="studentID", max_length=32)
     classname = models.CharField(verbose_name="classname", max_length=32)
     date = models.DateField(verbose_name="date")
-    starttime = models.IntegerField(verbose_name="startTime")
+    starttime = models.IntegerField(verbose_name="startTime",
+                                    validators=[MinValueValidator(9), MaxValueValidator(17)]
+                                    )
     attendance = models.CharField(verbose_name="attendance", max_length=16)
-    grade = models.IntegerField(verbose_name="grade")
+    grade = models.IntegerField(verbose_name="grade",
+                                validators=[MinValueValidator(0), MaxValueValidator(100)]
+                                )
 
     
 

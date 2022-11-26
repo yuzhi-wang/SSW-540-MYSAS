@@ -48,7 +48,6 @@ def changePassword(request):
 
 
 def viewAttendance(request):
-    # stud = UserInfo.objects.get(id)
     studentid = request.session.get('info')
     if not studentid:
         return redirect('/login/')

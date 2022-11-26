@@ -31,11 +31,11 @@ def bookSlot(request):
         return redirect('/login/')
     account_obj = UserInfo.objects.filter(studentID=studentid).first()
     attend_obj = Attendance.objects.filter(studentID=studentid)
-    # print(obj)
+    # for item in attend_obj:
+    #     print(item.studentID)
     if request.method == "GET":
         form = SlotModelForm()
         return render(request, "student.html", {"attend_obj": attend_obj,
-                                                "account_obj": account_obj,
                                                 "form": form})
     form = SlotModelForm(data=request.POST)
     if form.is_valid():
@@ -48,10 +48,10 @@ def bookSlot(request):
                                   attendance="NO",
                                   grade=0
                                   )
-        return redirect('/info/')
+        return render(request, "student.html", {"attend_obj": attend_obj,
+                                                "form": form})
     form.add_error("starttime", "Date or Time is unavailable")
     return render(request, "student.html", {"attend_obj": attend_obj,
-                                            "account_obj": account_obj,
                                             "form": form})
 
 

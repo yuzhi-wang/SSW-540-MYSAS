@@ -197,21 +197,21 @@
  </div>
 </div>
 </body>
-<script>
-   window.onload=function(){//from ww  w . j  a  va2s. c  o  m
-var today = new Date().toISOString().split('T')[0];
-document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);
-    }
-    function weekDay(wkDay){
-        var wkDay = document.getElementsByName(wkDay.name);
-
-        for(var i=0; i < wkDay.length; i++){
-            if(!wkDay[i].checked){
-                wkDay[i].disabled = true;
-            }else{
-                wkDay[i].disabled = false;
-            }
-        } 
-    }
-</script>
+{#<script>#}
+{#   window.onload=function(){//from ww  w . j  a  va2s. c  o  m#}
+{#var today = new Date().toISOString().split('T')[0];#}
+{#document.getElementsByName("setTodaysDate")[0].setAttribute('min', today);#}
+{#    }#}
+{#    function weekDay(wkDay){#}
+{#        var wkDay = document.getElementsByName(wkDay.name);#}
+{##}
+{#        for(var i=0; i < wkDay.length; i++){#}
+{#            if(!wkDay[i].checked){#}
+{#                wkDay[i].disabled = true;#}
+{#            }else{#}
+{#                wkDay[i].disabled = false;#}
+{#            }#}
+{#        } #}
+{#    }#}
+{#</script>#}
 {% endblock %}
