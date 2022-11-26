@@ -111,6 +111,16 @@
   background: #2AD705;
   color: #ffffff;
 }
+.header_mobile-nav__wvOoU {
+  display: inline-block; 
+  width: 100%;
+}
+.container1 {
+  float: left;
+}
+.container2 {
+  float: right;
+}
 
 </style>
 {% extends 'info.html' %}
@@ -130,25 +140,25 @@
 
 <body class="jumbotron">
 {% load static %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="font-family:Georgia, Garamond, Serif;">
-    <div class="container">
-      <a href="/info/" class="navbar-brand" style="font-size: 20px;"> ELC Attendance Management System
-      </a>
-
-      <a href="/info/" style="font-size: 20px;">Student Home</a>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-image: linear-gradient(#a32638,#a32638 60%,#a32638);">
+  <div class="header_mobile-nav__wvOoU" style="font-family:Georgia, Garamond, Serif;">
+    <div class="container1">
+      <a  href="/info/" class="navbar-brand" style="font-size: 20px;margin-right:5px"> ELC Attendance Management System
+      </a></div>
+      <div class="container2">
+      <a  href="/info/" style="font-size: 20px; color: #f8f9fa;float:left;margin-left:5px">Student Home</a>
     </div>
   </div>
   </nav>
-  <div class="container">
+  <div class="container" >
     <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
-      <h1 class="display-5">View Attendance</h1>
+      <h1 class="display-5" style="color: #a32638;">View Attendance</h1>
       <br /> 
       <hr>
             <div class="card mb-3">
-            <div class="card-header" style="background-color:rgb(47 164 231 / 25%) ;">
+            <div class="card-header" style="background-color:#49505745;">
               <i class="fas fa-table"></i>
-            <b style="color:#0088cc;">Attendance</b></div>
+            <b style="color:#a32638;">Attendance</b></div>
             <div class="card-body" style="background-color:rgb(134 142 150 / 21%);">
               <div class="table-responsive">
                 <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0" style="background-color:rgb(47 164 231 / 6%)">
@@ -182,11 +192,9 @@
               </div>
             </div>
           </div>
- </div> 
- <!-- <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div> -->
+ </div>
  <div class="text-center">
-    <!-- <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/info/">Submit</a> -->
-    <a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/logout/"> Log Out</a>
+    <a class="btn btn-primary" style="background-image: linear-gradient(#a32638,#a32638 60%,#a32638);" href="/logout/"> Log Out</a>
  </div>
 </div>
 </body>
