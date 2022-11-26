@@ -5,14 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysas/SAS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/teacher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/teacherAttendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/teacherAttendance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/utils/bootstrap.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/utils/bootstrap.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/account.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/account.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/db.sqlite3" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/mysas/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/mysas/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/mysas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/mysas/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/record.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/record.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +88,7 @@
       <workItem from="1669168072557" duration="1548000" />
       <workItem from="1669254477622" duration="10305000" />
       <workItem from="1669341311959" duration="14768000" />
-      <workItem from="1669423428165" duration="10141000" />
+      <workItem from="1669423428165" duration="12689000" />
     </task>
     <servers />
   </component>

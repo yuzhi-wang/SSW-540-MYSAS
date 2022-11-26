@@ -37,8 +37,19 @@ def bookSlot(request):
         return render(request, "student.html", {"attend_obj": attend_obj,
                                                 "account_obj": account_obj,
                                                 "form": form})
-    form = TeacherModelForm(data=request.POST)
-
+    form = SlotModelForm(data=request.POST)
+    if form.is_valid():
+        newdate = form.cleaned_data.get("date")
+        newtime = form.cleaned_data.get("starttime")
+        Attendance.objects.create(studentID=studentid,
+                                  classname=account_obj.classname,
+                                  date=newdate,
+                                  starttime=newtime,
+                                  attendance="NO",
+                                  grade=0
+                                  )
+        return redirect('/info/')
+    form.add_error("starttime", "Date or Time is unavailable")
     return render(request, "student.html", {"attend_obj": attend_obj,
                                             "account_obj": account_obj,
                                             "form": form})

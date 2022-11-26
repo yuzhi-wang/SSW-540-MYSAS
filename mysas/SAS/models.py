@@ -21,7 +21,7 @@ class Attendance(models.Model):
     studentID = models.CharField(verbose_name="studentID", max_length=32)
     classname = models.CharField(verbose_name="classname", max_length=32)
     date = models.DateField(verbose_name="date")
-    starttime = models.IntegerField(verbose_name="starttime")
+    starttime = models.IntegerField(verbose_name="startTime")
     attendance = models.CharField(verbose_name="attendance", max_length=16)
     grade = models.IntegerField(verbose_name="grade")
 
