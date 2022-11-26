@@ -41,6 +41,7 @@ def bookSlot(request):
     if form.is_valid():
         newdate = form.cleaned_data.get("date")
         newtime = form.cleaned_data.get("starttime")
+        # date_obj =
         Attendance.objects.create(studentID=studentid,
                                   classname=account_obj.classname,
                                   date=newdate,
@@ -85,7 +86,7 @@ def teacherAttendance(request):
         Attendance.objects.filter(studentID=newID,
                                   date=newDate,
                                   starttime=newTime).update(grade=newGrade)
-        return redirect("/teacher/")
+        return render(request, "teacherAttendance.html", {"obj": attend_obj, "form": form})
 
     form.add_error("grade", "Invalid Input")
     return render(request, "teacherAttendance.html", {"obj": attend_obj, "form": form})
