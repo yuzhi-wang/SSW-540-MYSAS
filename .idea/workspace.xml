@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="155ba7cc-69d6-4e21-a61a-f86089e0aecf" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/models.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/bookSlot.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/bookSlot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/student.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/student.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/teacherAttendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/teacherAttendance.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mysas/SAS/views/record.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/record.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/userinfo.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -91,7 +86,7 @@
       <workItem from="1669168072557" duration="1548000" />
       <workItem from="1669254477622" duration="10305000" />
       <workItem from="1669341311959" duration="14768000" />
-      <workItem from="1669423428165" duration="15162000" />
+      <workItem from="1669423428165" duration="15580000" />
     </task>
     <servers />
   </component>
