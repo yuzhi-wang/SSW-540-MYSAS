@@ -1,4 +1,13 @@
 {% block content %}
+<style>
+  #topic {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  height: 3.125rem;
+  background: #a32638;
+}
+</style>
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,30 +23,30 @@
 
 <body class="jumbotron">
     {% load static %}
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-  <div class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" style="font-family:Georgia, Garamond, Serif;">
-    <div class="container">
-      <a href="/teacher/" class="navbar-brand" style="font-size: 20px;"> ELC Attendance Management System
-      </a>
-    </div>
-  </div>
-  </nav>
-
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color:#343a4087!important;background-image: linear-gradient(#343a4087,#343a4087 60%,#343a4087);">
+      <div id ="topic"class="header_mobile-nav__wvOoU">
+        <div class="container">
+          <a> <img src="{% static 'images/stevenslogo3.jpg' %}" style="width:150px;height:60px ;"></a>
+          <a href="/teacher/" class="navbar-brand" style="font-size: 20px;" > ELC Attendance Management System
+          </a>
+        </div>
+      </div>
+      </nav>
   <div class="container">
   <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
-    <h1 class="display-5">VIEW STUDENT INFORMATION</h1>
+    <h1 class="display-5" style="color:#a32638; align-content: left;">VIEW STUDENT INFORMATION</h1>
     <br /> 
     <hr>   
 
-    <h1 style="text-align: left;font-size: 21px; color:black"> Welcome Admin <span style="color:green"> {{ obj.username }} </span> to Student Information!</h1>
+    <h1 style="text-align:left;font-size: 21px; color:#a32638"> Welcome Admin <span style="color:#a32638"> {{ obj.username }} </span> to Student Information!</h1>
     <!-- <h1 style="text-align: left;font-size: 20px; color:black">Thank you for logging in!</h1> -->
     <div class="row text-center">
     <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card" style="background-color:rgb(0 188 212 / 45%) ;">
-            <div class="card-body" style="width:200px;height:280px">
+        <div class="card" style="background-color:#49505745;">
+            <div class="card-body" style="width:200px;height:200px">
                 <a href="/teacherAttendance/"><img class="card-img-top"src="{% static 'images/Student_record.jpg' %}" style="width:200px;height:150px ;"></img></a>
-                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#9c27b0"href="/teacherAttendance/">Student Record</a>
-                <p class="card-text">View or update Student details.</p>
+                <a style="text-align: left; font-family:Georgia, Garamond, Serif;color:#a32638"href="/teacherAttendance/">Student Record</a>
+                <!-- <p class="card-text">View or update Student details.</p> -->
             </div>
               <!-- <table style="background-color: #96D4D4;border: 1px solid white;font-family:Georgia, Garamond, Serif;color:blue;font-style:italic;">
               <tr>
@@ -81,7 +90,6 @@
 {#        </div>#}
 {#    </div> -->#}
     </div>
-    <br>
     </div>
 {#    <!-- <div>#}
 {#        <div class="modal-dialog" role="document">#}
@@ -102,7 +110,7 @@
 {#    </div> -->#}
     <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
     <div class="modal-footer;col-lg-4 col-md-6 mb-8">
-    <p><a class="btn btn-primary" style="text-align: left; font-size: 20px; text-decoration: none; color:red;background-color:rgb(0 188 212 / 45%);" href="/logout/"> Log Out</a></p>
+      <p><a class="btn btn-primary" style="background-image: linear-gradient(#a32638,#a32638 60%,#a32638);" href="/logout/"> Log Out</a></p>
     </div>
 {#    {% else %}#}
 {#    <h1 style="font-size: 20px; color:red">You are not logged in</h1>#}
