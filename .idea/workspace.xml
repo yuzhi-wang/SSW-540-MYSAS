@@ -3,15 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="155ba7cc-69d6-4e21-a61a-f86089e0aecf" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/static/images/stevens.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/bookSlot.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/bookSlot.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/changePassword.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/changePassword.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/info.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/info.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/teacher.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/teacher.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/teacherAttendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/teacherAttendance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/templates/viewAttendance.html" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/templates/viewAttendance.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/SAS/views/record.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/SAS/views/record.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mysas/mysas/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/mysas/mysas/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -95,7 +86,7 @@
       <workItem from="1669254477622" duration="10305000" />
       <workItem from="1669341311959" duration="14768000" />
       <workItem from="1669423428165" duration="22308000" />
-      <workItem from="1669494820318" duration="4997000" />
+      <workItem from="1669494820318" duration="6001000" />
     </task>
     <servers />
   </component>
