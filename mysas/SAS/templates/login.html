@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>ELC attendance system</title>
+    <link rel="stylesheet" href="{% static 'plugins/bootstrap-3.4.1-dist/css/bootstrap.min.css' %}">
+    <style>
+        .account {
+            width: 400px;
+            border: 1px solid #dddddd;
+            border-radius: 5px;
+            box-shadow: 5px 5px 20px #aaa;
+
+            margin-left: auto;
+            margin-right: auto;
+            margin-top: 100px;
+            padding: 20px 40px;
+        }
+
+        .account h2 {
+            margin-top: 10px;
+            text-align: center;
+        }
+        
+        
+        #bg{
+            background-repeat: no-repeat;
+            background-position: top;
+            background-size: 1400px;
+        }
+        
+    </style>
+</head>
+<body id="bg" style="background-image: url('{% static 'images/stevens.jpg' %}');">
+<div class="account" >
+    <h2 style="color: #a32638;"><strong> Account Login </strong></h2>
+    <form method="post" novalidate>
+        {% csrf_token %}
+        <div class="form-group">
+            <label style="color: white;"><strong>username</strong></label>
+            {{ form.username }}
+            <span style="color: #a32638;"><strong>{{ form.username.errors.0 }}</strong></span>
+        </div>
+        <div class="form-group">
+            <label style="color: white;"><strong>password</strong></label>
+            {{ form.password }}
+            <span style="color: white;"><strong>{{ form.password.errors.0 }}</strong></span>
+        </div>
+
+        <input type="submit" value="login" class="btn btn-primary" style="background-color: #a32638;">
+    </form>
+</div>
+</body>
+</html>

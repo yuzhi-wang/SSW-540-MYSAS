@@ -15,10 +15,31 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from SAS import views
+from SAS.views import account, userinfo, record
 
 urlpatterns = [
-    path('index/', views.index),
+    # path('index/', account.index),
+    # front page
+    path('', account.login),
 
-    path('user/list/', views.user_list),
+    # user login
+    path('login/', account.login),
+    path('logout/', account.logout),
+    # student info present
+    path('info/', userinfo.info_list),
+    # function for student
+    path('viewAttendance/', userinfo.viewAttendance),
+    path('bookSlot/', record.bookSlot),
+    path('cancelSlot/', record.cancel_slot),
+    path('changePassword/', userinfo.changePassword),
+    # functions for teacher
+    path('teacher/', record.teacher),
+    path('teacherAttendance/', record.teacherAttendance),
+
+    
+
+    # test
+    path('student/', userinfo.student),
+    path('layout/', account.layout)
+    # path('test/', userinfo.user_test)
 ]

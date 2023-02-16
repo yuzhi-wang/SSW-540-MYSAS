@@ -1,0 +1,203 @@
+<style>
+    .app-time {
+  border: 1px solid #fff;
+  padding: 20px 30px;
+  box-shadow: 2px 4px 10px 0px #c7cacce3;
+}
+
+.option-input {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  position: relative;
+  top: 5px;
+  right: 0;
+  bottom: 0;
+  left: 40px;
+  height: 20px;
+  width: 20px;
+  transition: all 0.15s ease-out 0s;
+  background: #fff;
+  border: 1px solid #999;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  margin-right: 0.5rem;
+  outline: none;
+  position: relative;
+  z-index: 1000;
+}
+.option-input:hover {
+  background: #e5e7eb;
+}
+.option-input:checked {
+  border: 1px solid #fff;
+}
+.option-input:checked::before {
+  color: #d9486d;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  content: "✔";
+  display: inline-block;
+  font-size: 12px;
+  left: 4px;
+  line-height: 20px;
+}
+.option-input:checked::after {
+  -webkit-animation: click-wave 0.65s;
+  -moz-animation: click-wave 0.65s;
+  animation: click-wave 0.65s;
+  background: #40e0d0;
+  content: "";
+  display: block;
+  position: relative;
+  z-index: 100;
+}
+
+.option-input.radio {
+  border-radius: 50%;
+}
+.option-input.radio::after {
+  border-radius: 50%;
+}
+.app-check {
+  display: flex;
+}
+.app-border {
+  border: 1px solid #ece9e9;
+  border-radius: 7px;
+  padding: 5px 7px 5px 9px;
+  padding-left: 40px;
+  min-height: 30px;
+}
+
+.option-input.radio:checked + .app-border {
+  background: #d9486d;
+}
+.option-input.radio:disabled,
+.option-input.radio:disabled + .app-border {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+.app-label {
+  position: relative;
+  top: 5px;
+  margin-right: 10px;
+ 
+  
+}
+
+
+.weekDays-selector input {
+  display: none!important;
+}
+
+.weekDays-selector input[type=checkbox] + label {
+  display: inline-block;
+  border-radius: 6px;
+  background: #dddddd;
+  height: 40px;
+  width: 100px;
+  margin-right: 3px;
+  line-height: 40px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.weekDays-selector input[type=checkbox]:checked + label {
+  background: #2AD705;
+  color: #ffffff;
+}
+.header_mobile-nav__wvOoU {
+  display: inline-block; 
+  width: 100%;
+}
+.container1 {
+  float: left;
+}
+.container2 {
+  float: right;
+}
+
+</style>
+{% extends 'info.html' %}
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"
+    integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
+    crossorigin="anonymous" />
+
+  <!-- Google Fonts - Press Start 2P -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>View Attendance </title>
+</head>
+
+<body class="jumbotron">
+{% load static %}
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-image: linear-gradient(#a32638,#a32638 60%,#a32638);">
+  <div class="header_mobile-nav__wvOoU" style="font-family:Georgia, Garamond, Serif;">
+    <div class="container1">
+      <a  href="/info/" class="navbar-brand" style="font-size: 20px;margin-right:5px"> ELC Attendance Management System
+      </a></div>
+      <div class="container2">
+      <a  href="/info/" style="font-size: 20px; color: #f8f9fa;float:left;margin-left:5px">Student Home</a>
+    </div>
+  </div>
+  </nav>
+  <div class="container" >
+    <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
+      <h1 class="display-5" style="color: #a32638;">View Attendance</h1>
+      <br /> 
+      <hr>
+            <div class="card mb-3">
+            <div class="card-header" style="background-color:#49505745;">
+              <i class="fas fa-table"></i>
+            <b style="color:#a32638;">Attendance</b></div>
+            <div class="card-body" style="background-color:rgb(134 142 150 / 21%);">
+              <div class="table-responsive">
+                <table class="table table-bordered text-center" id="dataTable" width="100%" cellspacing="0" style="background-color:rgb(47 164 231 / 6%)">
+                  <thead class="thead-light ">
+                    <tr style="border: 1px solid white;border-collapse: collapse;">
+                        <!-- <th>Batch</th> -->
+                        <th style="border: 1px solid white;border-collapse: collapse;">Student ID</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Course name</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Attended classes</th>
+                        <th style="border: 1px solid white;border-collapse: collapse;">Total classes</th>
+{#                        <th style="border: 1px solid white;border-collapse: collapse;">Attendance %</th>#}
+{#                        <th style="border: 1px solid white;border-collapse: collapse;">Classes to attend</th>#}
+                    </tr>
+                  </thead>
+                  <tbody>
+
+                    <tr>
+                        <td>{{ obj.studentID }}</td>
+                        <td>{{ obj.classname }}</td>
+                        <td>{{ obj.attnumber }}</td>
+                        <td>{{ obj.totalclass }}</td>
+{#                        {% if a.attendancepercentage < 75 %}#}
+{#                        <td class="p-3 mb-2 bg-danger text-white">{{ a.attendancepercentage }}</td>#}
+{#                        {% else %}#}
+{#                        <td class="p-3 mb-2 bg-success text-white">{{ a.attendance }}</td>#}
+{#                        {% endif %}#}
+{#                        <td>{{a.classtoattend}}</td>#}
+                    </tr>
+
+
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+ </div>
+ <div class="text-center">
+    <a class="btn btn-primary" style="background-image: linear-gradient(#a32638,#a32638 60%,#a32638);" href="/logout/"> Log Out</a>
+ </div>
+</div>
+</body>
+{% endblock %}

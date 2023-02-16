@@ -1,0 +1,125 @@
+{% block content %}
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootswatch/4.5.3/cerulean/bootstrap.min.css"
+    integrity="sha512-dQLT/B7byn2LjN/DN4zeBKpwGV6qbidV0XiMRWQOL7TGrV7FkZFldkGG+DGMU+CQnMTcRZlUI7GMWt1j6akNew=="
+    crossorigin="anonymous" />
+
+  <!-- Google Fonts - Press Start 2P -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+  <title>Student Home Page </title>
+  <style>
+    #topic {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    height: 3.125rem;
+    background: #a32638;
+}
+  </style>
+</head>
+
+
+    {% load static %}
+    <body class="jumbotron">    
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" style="background-color:#343a4087!important;background-image: linear-gradient(#343a4087,#343a4087 60%,#343a4087);">
+  <div id ="topic"class="header_mobile-nav__wvOoU">
+    <div class="container">
+      <a> <img src="{% static 'images/stevenslogo3.jpg' %}" style="width:150px;height:60px ;"></a>
+      <a href="/info/" class="navbar-brand" style="font-size: 20px;" > ELC Attendance Management System
+      </a>
+    </div>
+  </div>
+  </nav>
+
+  <div class="container" >
+  <div class="jumbotron" style="text-align: left; margin-top:-50px;font-family:Georgia, Garamond, Serif;">
+    <h1 class="display-5" style="color:#a32638; align-content: left;">STUDENT INFORMATION</h1>
+    <br /> 
+    <hr>   
+
+    <h1 style="text-align: left;font-size: 21px; color:#a32638"> Welcome <span style="color:#a32638"> {{ data_obj.username }} </span> to Student Information!</h1>
+    <!-- <h1 style="text-align: left;font-size: 20px; color:black">Thank you for logging in!</h1> -->
+    <div class="row text-center">
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card" style="background-color:#49505745;">
+            <div class="card-body" style="width:200px;height:200px">
+                <a href="/viewAttendance/"><img class="card-img-top;center"src="{% static 'images/attendance.jpg' %}" style="width:200px;height:150px ;"></img></a>
+                <a style="text-align: center; font-family:Georgia, Garamond, Serif;color:#a32638"href="/viewAttendance/">Attendance </a>
+                <!-- <p class="card-text" style="text-align:left ;">View the attendance status for each of your Labs.</p> -->
+            </div>
+              <!-- <table style="background-color: #96D4D4;border: 1px solid white;font-family:Georgia, Garamond, Serif;color:blue;font-style:italic;">
+              <tr>
+                    <th style = "border: 1px solid white;">Total Attendance</th>
+                    <th style = "border: 1px solid white;">Class Attended</th>
+             </tr>
+             <tr>
+                    <td style = "border: 1px solid white;">10</td>
+                    <td style = "border: 1px solid white;">6</td>
+            </tr>
+            </table> -->
+        </div>
+     
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card" style="background-color:#49505745;">
+            <div class="card-body" style="width:200px;height:200px">
+              <a href="/bookSlot/"><img class="card-img-to;center"src="{% static 'images/slot2.jpg' %}" style="width:200px;height:150px ;"></img></a>
+                <a style="text-align: center; font-family:Georgia, Garamond, Serif;color:#a32638"href="/bookSlot/">Book Lab Slot</a>
+                <!-- <p class="card-text">Book solt for your Labs.</p> -->
+            </div>
+        </div>    
+    </div>
+        <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card" style="background-color:#49505745;">
+            <div class="card-body" style="width:200px;height:200px">
+              <a href="/cancelSlot/"><img class="card-img-to;center"src="{% static 'images/cancel.jpg' %}" style="width:200px;height:150px ;"></img></a>
+                <a style="text-align: center; font-family:Georgia, Garamond, Serif;color:#a32638"href="/cancelSlot/">Cancel Lab Slot</a>
+                <!-- <p class="card-text">Book solt for your Labs.</p> -->
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card" style="background-color:#49505745;">
+            <div class="card-body" style="width:200px;height:200px">
+              <a href="/changePassword/"><img class="card-img-top;center"src="{% static 'images/pwd.jpg' %}" style="width:200px;height:150px ;"></img></a>
+                <a style="text-align: center; font-family:Georgia, Garamond, Serif;color:#a32638"href="/changePassword/">Change password</a>
+                <!-- <p class="card-text">Update your password</p> -->
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+{#    <!-- <div>#}
+{#        <div class="modal-dialog" role="document">#}
+{#          <div class="modal-content">#}
+{#            <div class="modal-header">#}
+{#              <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>#}
+{#              <button class="close" type="button" data-dismiss="modal" aria-label="Close">#}
+{#                <span aria-hidden="true">×</span>#}
+{#              </button>#}
+{#            </div>#}
+{#            <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>#}
+{#            <div class="modal-footer">#}
+{#              <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>#}
+{#              <a class="btn btn-primary"  href="{% url 'logout' %}">Logout</a>#}
+{#            </div>#}
+{#          </div>#}
+{#        </div>#}
+{#    </div> -->#}
+    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+    <div class="modal-footer;col-lg-4 col-md-6 mb-8" >
+    <p><a class="btn btn-primary" style="background-image: linear-gradient(#a32638,#a32638 60%,#a32638);" href="/logout/"> Log Out</a></p>
+    </div>
+{#    {% else %}#}
+{#    <h1 style="font-size: 20px; color:red">You are not logged in</h1>#}
+{#    <br>#}
+{#    <a style="font-size: 16px; text-decoration: none; color:rgb(24, 71, 158);"  href="/logout/">Log In</a>#}
+{#    {% endif %}#}
+    {% endblock %}
+   </div>
+   </div>
+ </body>
+</html>
